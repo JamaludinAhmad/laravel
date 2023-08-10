@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// Route::get('/postingan/tambah', [PostController::class, 'create']);
 
-Route::resource('/posts', PostController::class);
+Route::get('/list', [EmployeeController::class, 'index']);
+Route::get('/list/tambah-karyawan',[EmployeeController::class, 'createview']);
+Route::post('/list/tambah-karyawan',[EmployeeController::class, 'create']);
+Route::get('/list/{id}/edit', [EmployeeController::class, 'updateview']);
