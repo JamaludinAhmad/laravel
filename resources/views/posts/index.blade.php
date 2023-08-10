@@ -44,9 +44,17 @@
                 </td>
                 <td>{{$employee->position}}</td>
                 <td>
-                    <button type="button" class="btn btn-link btn-sm btn-rounded">
-                      <a href="list/edit/{{$employee->id}}"><p>Edit</p></a>
+                  <button type="button" class="btn btn-link btn-sm btn-rounded">
+                    <a href="list/edit/{{$employee->id}}"><p>Edit</p></a>
+                  </button>
+                  <form action="/list/{{$employee->id}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-link btn-sm btn-rounded">
+                    <p>hapus</p>
                     </button>
+                  
+                  </form>
                 </td>
                 </tr>
             @empty

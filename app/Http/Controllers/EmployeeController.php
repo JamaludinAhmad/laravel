@@ -72,6 +72,8 @@ class EmployeeController extends Controller
 
             //delete image dulu
             Storage::delete('public/pekerja/'. $employee->image);
+
+            //update field
             $employee->update([
                 'name' => $request->name,
                 'email'=> $request->email,
@@ -94,6 +96,14 @@ class EmployeeController extends Controller
         }
 
         return redirect('/list');
+    }
 
+    public function delete(Employee $id){
+        // dd($id);
+        $employee = $id;
+        Storage::delete('public/pekerja/'.$employee->image);
+        $id->delete();
+
+        return redirect('/list');
     }
 }
