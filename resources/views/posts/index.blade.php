@@ -50,7 +50,7 @@
                   <form action="/list/{{$employee->id}}" method="post">
                     @csrf
                     @method('delete')
-                    <button type="submit" class="btn btn-link btn-sm btn-rounded">
+                    <button type="submit" class="btn btn-link btn-sm btn-rounded" onclick="return confirm('yakin mau dihapus?')">
                     <p>hapus</p>
                     </button>
                   
