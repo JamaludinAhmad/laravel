@@ -39,8 +39,8 @@
                     <p class="fw-normal mb-1">{{$employee->title}}</p>
                     <p class="text-muted mb-0">IT department</p>
                 </td>
-                <td>
-                    <span class="badge badge-success rounded-pill d-inline">Active</span>
+                <td class="p-3 mb-2 bg-dark text-white">
+                    <span class="badge badge-success rounded-pill d-inline">{{$employee->status == true ? 'Active' : 'Non Aktif'}}</span>
                 </td>
                 <td>{{$employee->position}}</td>
                 <td>

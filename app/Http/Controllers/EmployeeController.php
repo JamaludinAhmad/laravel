@@ -34,6 +34,7 @@ class EmployeeController extends Controller
             'email' => 'required|email',
             'title' => 'required',
             'position' => 'required',
+            'status' => 'required',
             'image' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
         ]);
 
@@ -47,7 +48,7 @@ class EmployeeController extends Controller
             'email' => $request->email,
             'title' => $request->title,
             'position' => $request->position,
-            'status'=> (int)'1',
+            'status'=> $request->status,
             'image' => $image->hashName(),
         ]);
 
@@ -79,7 +80,7 @@ class EmployeeController extends Controller
                 'email'=> $request->email,
                 'title' => $request->title,
                 'position' => $request->position,
-                'status' => (int) '1',
+                'status' => (int)$request->status,
                 'image' => $image->hashName(),
             ]);
         }
@@ -90,7 +91,7 @@ class EmployeeController extends Controller
                 'email'=> $request->email,
                 'title' => $request->title,
                 'position' => $request->position,
-                'status' => (int) '1',
+                'status' =>(int)$request->status,
             ]);
 
         }

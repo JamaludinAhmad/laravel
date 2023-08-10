@@ -25,6 +25,14 @@
         </div>
 
         <div class="col-auto my-1">
+            <label class="mr-sm-2" for="inlineFormCustomSelect">Status</label>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="status">
+              <option value="1">Active</option>
+              <option value="0">Non Active</option>
+            </select>
+        </div>
+
+        <div class="col-auto my-1">
             <label class="mr-sm-2" for="inlineFormCustomSelect">Position</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="position" value="{{old('position', $employee->position)}}">
               <option selected>{{ $employee->position}}</option>

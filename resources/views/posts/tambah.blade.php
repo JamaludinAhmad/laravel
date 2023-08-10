@@ -24,13 +24,13 @@
             <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="Backend-Developer">
         </div>
         
-        {{-- <div class="col-auto my-1">
+        <div class="col-auto my-1">
             <label class="mr-sm-2" for="inlineFormCustomSelect">Status</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="status">
-              <option value="1">Junior</option>
-              <option value="2">Senior</option>
+              <option value="1">Active</option>
+              <option value="0">Non Active</option>
             </select>
-        </div> --}}
+        </div>
 
         <div class="col-auto my-1">
             <label class="mr-sm-2" for="inlineFormCustomSelect">Position</label>
