@@ -21,7 +21,7 @@ class EmployeeController extends Controller
         return view('posts.tambah');
     }
 
-    public function updateview(Employee $employee){
+    public function edit(Employee $employee){
         // dd($employee);
         return view('posts.edit', compact('employee'));
     }

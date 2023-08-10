@@ -13,7 +13,7 @@
         {{-- @method('PUT') --}}
         <div class="form-group">
             <label for="exampleFormControlInput1">Nama</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="Nijika Ijichi">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="{{old('name', $employee->name)}}">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Email address</label>
