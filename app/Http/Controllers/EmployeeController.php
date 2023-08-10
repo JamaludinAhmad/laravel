@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class EmployeeController extends Controller
 {
@@ -21,8 +22,9 @@ class EmployeeController extends Controller
         return view('posts.tambah');
     }
 
-    public function edit(Employee $employee){
-        // dd($employee);
+    public function editview(Employee $id){
+        // dd($id);
+        $employee = $id;
         return view('posts.edit', compact('employee'));
     }
 
@@ -50,5 +52,48 @@ class EmployeeController extends Controller
         ]);
 
         return redirect('/list');
+    }
+// 
+    public function update(Request $request, Employee $id){
+        $employee = $id;
+        //validasi rikues
+        $this->validate($request, [
+            'name' => 'required|max:30',
+            'email' => 'required|email',
+            'title' => 'required',
+            'position' => 'required',
+            'image' => 'image|mimes:jpg,png,jpeg,svg|max:2048',
+        ]);
+
+        if($request->hasFile('image')){
+            //masukan data
+            $image = $request->file('image');
+            $image->storeAs('public/pekerja', $image->hashName());
+
+            //delete image dulu
+            Storage::delete('public/pekerja/'. $employee->image);
+            $employee->update([
+                'name' => $request->name,
+                'email'=> $request->email,
+                'title' => $request->title,
+                'position' => $request->position,
+                'status' => (int) '1',
+                'image' => $image->hashName(),
+            ]);
+        }
+
+        else {
+            $employee->update([
+                'name' => $request->name,
+                'email'=> $request->email,
+                'title' => $request->title,
+                'position' => $request->position,
+                'status' => (int) '1',
+            ]);
+
+        }
+
+        return redirect('/list');
+
     }
 }

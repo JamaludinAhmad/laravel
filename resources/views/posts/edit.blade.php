@@ -8,34 +8,26 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/list/tambah-karyawan" enctype="multipart/form-data" method="POST">
+    <form action="/list/edit/{{$employee->id}}" enctype="multipart/form-data" method="POST">
         @csrf
-        {{-- @method('PUT') --}}
+        @method('PUT')
         <div class="form-group">
             <label for="exampleFormControlInput1">Nama</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="name" value="{{old('name', $employee->name)}}">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="nijika@example.com">
+            <input type="email" class="form-control" id="exampleFormControlInput1" name="email" value="{{old('email', $employee->email)}}">
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Title</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="Backend-Developer">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="{{old('title', $employee->title)}}">
         </div>
-        
-        {{-- <div class="col-auto my-1">
-            <label class="mr-sm-2" for="inlineFormCustomSelect">Status</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="status">
-              <option value="1">Junior</option>
-              <option value="2">Senior</option>
-            </select>
-        </div> --}}
 
         <div class="col-auto my-1">
             <label class="mr-sm-2" for="inlineFormCustomSelect">Position</label>
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="position">
-              <option selected>Choose...</option>
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="position" value="{{old('position', $employee->position)}}">
+              <option selected>{{ $employee->position}}</option>
               <option value="Junior">Junior</option>
               <option value="Senior">Senior</option>
               <option value="Sepuh">Sepuh</option>

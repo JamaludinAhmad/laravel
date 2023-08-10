@@ -22,4 +22,5 @@ Route::get('/', function () {
 Route::get('/list', [EmployeeController::class, 'index']);
 Route::get('/list/tambah-karyawan',[EmployeeController::class, 'createview']);
 Route::post('/list/tambah-karyawan',[EmployeeController::class, 'create']);
-Route::get('/list/{id}/edit', [EmployeeController::class, 'edit']);
+Route::get('/list/edit/{id}', [EmployeeController::class, 'editview']);
+Route::put('/list/edit/{id}', [EmployeeController::class, 'update']);

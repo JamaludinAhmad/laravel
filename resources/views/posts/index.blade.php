@@ -45,7 +45,7 @@
                 <td>{{$employee->position}}</td>
                 <td>
                     <button type="button" class="btn btn-link btn-sm btn-rounded">
-                      <a href="list/{{$employee->id}}/edit"><p>Edit</p></a>
+                      <a href="list/edit/{{$employee->id}}"><p>Edit</p></a>
                     </button>
                 </td>
                 </tr>

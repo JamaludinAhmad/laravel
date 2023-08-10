@@ -35,7 +35,7 @@
         <div class="col-auto my-1">
             <label class="mr-sm-2" for="inlineFormCustomSelect">Position</label>
             <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="position">
-              <option selected>Choose...</option>
+              <option selected>Junior</option>
               <option value="Junior">Junior</option>
               <option value="Senior">Senior</option>
               <option value="Sepuh">Sepuh</option>
